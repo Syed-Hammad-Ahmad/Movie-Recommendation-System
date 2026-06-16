@@ -30,3 +30,6 @@ streamlit run app.py
 ## Live Demo
 https://hammad-movie-recommendation-system.streamlit.app/
 
+## Github Repository
+https://github.com/Syed-Hammad-Ahmad/Movie-Recommendation-System
+
