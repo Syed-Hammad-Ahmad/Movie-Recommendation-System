@@ -1,6 +1,8 @@
 import streamlit as st
 import pickle
 import requests
+from sklearn.feature_extraction.text import CountVectorizer
+from sklearn.metrics.pairwise import cosine_similarity
 
 st.markdown("""
 <style>
@@ -55,7 +57,9 @@ st.markdown(
 )
 
 movies = pickle.load(open("movies.pkl","rb"))
-similarity = pickle.load(open("similarity.pkl", "rb"))
+cv = CountVectorizer(max_features=5000, stop_words='english')
+vector = cv.fit_transform(movies['tags']).toarray()
+similarity = cosine_similarity(vector)
 
 def fetch_poster(movie_id):
     url = f"https://api.themoviedb.org/3/movie/{movie_id}?api_key=318679c222cb054bfdc67a9e4ee87ef6"
