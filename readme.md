@@ -27,3 +27,6 @@ A content-based movie recommendation system built using Python, Machine Learning
 pip install -r requirements.txt
 streamlit run app.py
 
+## Live Demo
+https://hammad-movie-recommendation-system.streamlit.app/
+
